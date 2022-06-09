@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<h2>myMedia</h2>
+<h5>Variety of files to be uploaded by the user</h5>
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8">
+            <h2>Description</h2>
+            <p>For this assignment you will be creating a media uploading system. You will need to code four main sections of the program</p>
+            <p>The first page will display the uploaded documents of any file format</p>
+            <p>The second page will display the Images that the user has uploaded</p>
+            <p>The third page will display the Videos uploaded by the user</p>
+            <p>The fourth page will display the biography of the user</p>
+        </div>
+        @using (Html.BeginForm("Home", "Media", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="col-lg-4">
+                <h2>Option Selection</h2>
+                <div>
+                    <div class="radio">
+                        <label><input type="radio" name="Option" value="Document">Document</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="Option" value="Image">Image</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="Option" value="Video">Video</label>
+                    </div>
+                </div>
+                <input type="file" class="form-control" name="file" />
+                <br />
+                <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+        }
+    </div>
+</div>
+
+
